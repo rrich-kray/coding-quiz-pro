@@ -10,6 +10,12 @@ const Landing = ({ activePage, changeActivePage, startTimer }) => {
       >
         Start!
       </button>
+      <button
+        className="view-scores-btn"
+        onClick={() => changeActivePage("scores")}
+      >
+        View high scores
+      </button>
     </div>
   );
 };
