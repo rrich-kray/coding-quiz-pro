@@ -2,10 +2,16 @@ import React from "react";
 import "./Scores.css";
 
 const Scores = () => {
-  // TODO: create prompt that accepts user input then sets currentScore state to localStorage along with username
-  <div>
-    <div></div>
-  </div>;
+  return (
+    <div className="scores-list">
+      {localStorage.getItem("scores").map((score) => (
+        <div className="user-score">
+          <span>{score[0]}</span>
+          <span>{score[1]}</span>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Scores;

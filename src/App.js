@@ -49,7 +49,14 @@ const App = () => {
         />
       );
     if (activePage === "play-again") {
-      return <PlayAgain changeActivePage={changeActivePage} />;
+      return (
+        <PlayAgain
+          changeActivePage={changeActivePage}
+          changeCurrentScore={changeCurrentScore}
+          setSeconds={setSeconds}
+          changeCurrentQuestionIndex={changeCurrentQuestionIndex}
+        />
+      );
     }
   };
 
@@ -61,7 +68,6 @@ const App = () => {
 
   return (
     <>
-      <Nav />
       <div className="main-cointainer">{renderActivePage()}</div>
     </>
   );
