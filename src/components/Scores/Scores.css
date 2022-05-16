@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.user-score {
+.user-info {
     width: 100%;
 }
 
@@ -22,5 +22,9 @@
     color: #266784;
     background: #2196f3;
     box-shadow: 0 0 41px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.username, .user-score {
+    margin: 10px;
 }
 

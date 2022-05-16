@@ -5,12 +5,18 @@ const Scores = ({ changeActivePage }) => {
   console.log(JSON.parse(localStorage.getItem("scores")));
   return (
     <div className="scores-list">
-      {JSON.parse(localStorage.getItem("scores")).map((score) => (
-        <div className="user-score">
-          <span>{score[0]}</span>
-          <span>{score[1]}</span>
-        </div>
-      ))}
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Score</th>
+        </tr>
+        {JSON.parse(localStorage.getItem("scores")).map((score) => (
+          <tr>
+            <td className="username">{score[0]}</td>
+            <td className="user-score">{score[1]}</td>
+          </tr>
+        ))}
+      </table>
       <button className="exit-btn" onClick={() => changeActivePage("landing")}>
         Exit
       </button>
