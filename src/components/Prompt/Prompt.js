@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Prompt.css";
+import { CSSTransition } from "react-transition-group";
 
 const Prompt = ({ currentScore, changeActivePage }) => {
-  // TODO: create prompt that accepts user input then sets currentScore state to localStorage along with username
+  const [inProp, setInProp] = useState(false);
+  useEffect(() => {
+    setInProp(true);
+  });
+
   const submitScore = (userInput) => {
     if (!localStorage.getItem("scores")) {
       const newScoresObj = [];
@@ -16,16 +21,23 @@ const Prompt = ({ currentScore, changeActivePage }) => {
   };
 
   return (
-    <div className="prompt">
-      <label htmlFor="username">Please enter your username:</label>
-      <input name="username" className="username"></input>
-      <button
-        className="user-submit-btn"
-        onClick={() => submitScore(document.querySelector(".username").value)}
-      >
-        Submit
-      </button>
-    </div>
+    <CSSTransition
+      in={inProp}
+      timeout={200}
+      classNames="prompt-transition"
+      unmountOnExit
+    >
+      <div className="prompt">
+        <label htmlFor="username">Please enter your username:</label>
+        <input name="username" className="username"></input>
+        <button
+          className="user-submit-btn"
+          onClick={() => submitScore(document.querySelector(".username").value)}
+        >
+          Submit
+        </button>
+      </div>
+    </CSSTransition>
   );
 };
 

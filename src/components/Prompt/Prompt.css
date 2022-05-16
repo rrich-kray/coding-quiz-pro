@@ -35,3 +35,21 @@
 .prompt button:hover {
     background:rgba(149, 157, 165, 0.2);
 }
+
+.prompt-transition-enter {
+    opacity: 0;
+}
+
+.prompt-transition-enter.prompt-transition-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.prompt-transition-leave {
+    opacity: 0;
+}
+
+.prompt-transition-leave.prompt-transition-leave-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}

@@ -10,7 +10,7 @@ const Landing = ({ activePage, changeActivePage, startTimer }) => {
   });
 
   return (
-    <CSSTransition in={inProp} timeout={500} classNames="example">
+    <CSSTransition in={inProp} timeout={500} classNames="example" unmountOnExit>
       <div className="landing-page">
         <button
           className="start-btn"

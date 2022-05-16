@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import questions from "./questionData";
 import "./Question.css";
 import Infobar from "../Infobar/Infobar";
+import { CSSTransition } from "react-transition-group";
 
 const Question = ({
   currentQuestionIndex,
@@ -11,7 +12,14 @@ const Question = ({
   seconds,
   setSeconds,
   changeActivePage,
+  startTimer,
 }) => {
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    setInProp(true);
+  });
+
   const checkAnswer = (e) => {
     if (e.target.textContent === questions[currentQuestionIndex].answer) {
       changeCurrentScore(() => currentScore + 10);
@@ -34,19 +42,28 @@ const Question = ({
   };
 
   return (
-    <div className="quiz-container">
-      <Infobar currentScore={currentScore} seconds={seconds} />
-      <div className="question-container">
-        <h1 className="question">{questions[currentQuestionIndex].question}</h1>
-        <div className="answers-container">
-          {questions[currentQuestionIndex].options.map((option) => (
-            <button className="answer-btn" onClick={checkAnswer} key={option}>
-              {option}
-            </button>
-          ))}
+    <CSSTransition
+      in={inProp}
+      classNames="question"
+      timeout={200}
+      unmountOnExit
+    >
+      <div className="quiz-container">
+        <Infobar currentScore={currentScore} seconds={seconds} />
+        <div className="question-container">
+          <h1 className="question">
+            {questions[currentQuestionIndex].question}
+          </h1>
+          <div className="answers-container">
+            {questions[currentQuestionIndex].options.map((option) => (
+              <button className="answer-btn" onClick={checkAnswer} key={option}>
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </CSSTransition>
   );
 };
 

@@ -25,7 +25,6 @@ const App = () => {
       );
     }
     if (activePage === "questions") {
-      startTimer();
       return (
         <Question
           currentQuestionIndex={currentQuestionIndex}
@@ -39,6 +38,7 @@ const App = () => {
           gameOver={gameOver}
           setGameOver={setGameOver}
           key={"question"}
+          startTimer={startTimer}
         />
       );
     }

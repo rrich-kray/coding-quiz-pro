@@ -10,7 +10,12 @@ const Scores = ({ changeActivePage }) => {
   });
 
   return (
-    <CSSTransition in={inProp} timeout={500} classNames="scores-transitions">
+    <CSSTransition
+      in={inProp}
+      timeout={1000}
+      classNames="scores-transitions"
+      unmountOnExit
+    >
       <div className="scores-list">
         <table>
           <thead>
