@@ -1,0 +1,39 @@
+.infobar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.score {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-remaining {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+@media (max-width: 768px) {
+    .infobar {
+        display: flex;
+        flex-direction: column
+    }
+
+    .score {
+        width: 100%;
+    }
+
+    .time-remaining {
+        width: 100%;
+    }
+}
+

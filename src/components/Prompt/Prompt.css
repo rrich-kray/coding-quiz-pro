@@ -1,0 +1,37 @@
+.prompt {
+    /* height: 500px;
+    width: 500px; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.prompt label {
+    margin: 10px 10px;
+}
+
+.prompt input {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.prompt input:focus {
+    outline: none
+}
+
+.prompt button {
+    margin: 10px 10px;
+    background: none;
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s
+}
+
+.prompt button:hover {
+    background:rgba(149, 157, 165, 0.2);
+}
