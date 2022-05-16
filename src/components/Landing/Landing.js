@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Landing.css";
+import { CSSTransition } from "react-transition-group";
 
 const Landing = ({ activePage, changeActivePage, startTimer }) => {
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    setInProp(true);
+  });
+
   return (
-    <div className="landing-page">
-      <button
-        className="start-btn"
-        onClick={() => changeActivePage("questions")}
-      >
-        Start!
-      </button>
-      <button
-        className="view-scores-btn"
-        onClick={() => changeActivePage("scores")}
-      >
-        View high scores
-      </button>
-    </div>
+    <CSSTransition in={inProp} timeout={500} classNames="example">
+      <div className="landing-page">
+        <button
+          className="start-btn"
+          onClick={() => changeActivePage("questions")}
+        >
+          Start!
+        </button>
+        <button
+          className="view-scores-btn"
+          onClick={() => changeActivePage("scores")}
+        >
+          View high scores
+        </button>
+      </div>
+    </CSSTransition>
   );
 };
 

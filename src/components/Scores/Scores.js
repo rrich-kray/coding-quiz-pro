@@ -1,26 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Scores.css";
+import { CSSTransition } from "react-transition-group";
 
 const Scores = ({ changeActivePage }) => {
-  console.log(JSON.parse(localStorage.getItem("scores")));
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    setInProp(true);
+  });
+
   return (
-    <div className="scores-list">
-      <table>
-        <tr>
-          <th>Username</th>
-          <th>Score</th>
-        </tr>
-        {JSON.parse(localStorage.getItem("scores")).map((score) => (
-          <tr>
-            <td className="username">{score[0]}</td>
-            <td className="user-score">{score[1]}</td>
-          </tr>
-        ))}
-      </table>
-      <button className="exit-btn" onClick={() => changeActivePage("landing")}>
-        Exit
-      </button>
-    </div>
+    <CSSTransition in={inProp} timeout={500} classNames="scores-transitions">
+      <div className="scores-list">
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {JSON.parse(localStorage.getItem("scores")).map((score) => (
+              <tr>
+                <td className="username">{score[0]}</td>
+                <td className="user-score">{score[1]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <button
+          className="exit-btn"
+          onClick={() => changeActivePage("landing")}
+        >
+          Exit
+        </button>
+      </div>
+    </CSSTransition>
   );
 };
 

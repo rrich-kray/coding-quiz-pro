@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Question from "./components/Question/Question";
 import Landing from "./components/Landing/Landing";
-import Nav from "./components/Nav/Nav";
 import Scores from "./components/Scores/Scores";
 import Prompt from "./components/Prompt/Prompt";
 import PlayAgain from "./components/PlayAgain/PlayAgain";
@@ -21,10 +20,12 @@ const App = () => {
           startTimer={startTimer}
           activePage={activePage}
           changeActivePage={changeActivePage}
+          key={"landing"}
         />
       );
     }
     if (activePage === "questions") {
+      startTimer();
       return (
         <Question
           currentQuestionIndex={currentQuestionIndex}
@@ -37,6 +38,7 @@ const App = () => {
           changeActivePage={changeActivePage}
           gameOver={gameOver}
           setGameOver={setGameOver}
+          key={"question"}
         />
       );
     }
@@ -47,6 +49,7 @@ const App = () => {
         <Prompt
           currentScore={currentScore}
           changeActivePage={changeActivePage}
+          key={"prompt"}
         />
       );
     if (activePage === "play-again") {
@@ -56,6 +59,7 @@ const App = () => {
           changeCurrentScore={changeCurrentScore}
           setSeconds={setSeconds}
           changeCurrentQuestionIndex={changeCurrentQuestionIndex}
+          key={"play-again"}
         />
       );
     }
@@ -67,11 +71,7 @@ const App = () => {
     }, 1000);
   };
 
-  return (
-    <>
-      <div className="main-cointainer">{renderActivePage()}</div>
-    </>
-  );
+  return <div className="main-cointainer">{renderActivePage()}</div>;
 };
 
 export default App;
