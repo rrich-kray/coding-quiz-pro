@@ -4,7 +4,14 @@ import "./Prompt.css";
 const Prompt = ({ currentScore, changeActivePage }) => {
   // TODO: create prompt that accepts user input then sets currentScore state to localStorage along with username
   const submitScore = (userInput) => {
-    localStorage.setItem("scores", JSON.stringify([userInput, currentScore]));
+    if (!localStorage.getItem("scores")) {
+      const newScoresObj = [];
+      localStorage.setItem("scores", JSON.stringify(newScoresObj));
+    }
+    const scoresObj = [userInput, currentScore];
+    const scores = JSON.parse(localStorage.getItem("scores"));
+    scores.push(scoresObj);
+    localStorage.setItem("scores", JSON.stringify(scores));
     changeActivePage("play-again");
   };
 

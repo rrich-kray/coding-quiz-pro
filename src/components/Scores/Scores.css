@@ -6,3 +6,21 @@
 .user-score {
     width: 100%;
 }
+
+.exit-btn {
+    padding: 5px;
+    height:50px;
+    width: 100px;
+    border-radius: 8px;
+    background: none;
+    margin-top: 20px;
+    transition: 0.25s
+}
+
+.exit-btn:hover {
+    cursor: pointer;
+    color: #266784;
+    background: #2196f3;
+    box-shadow: 0 0 41px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+

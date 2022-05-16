@@ -7,23 +7,24 @@ const PlayAgain = ({
   setSeconds,
   changeCurrentQuestionIndex,
 }) => {
-  const playAgain = () => {
+  const playAgain = (choice) => {
     changeCurrentScore(0);
     setSeconds(60);
     changeCurrentQuestionIndex(0);
-    changeActivePage("questions");
+    if (choice === "yes") {
+      changeActivePage("questions");
+      return;
+    }
+    changeActivePage("landing");
   };
   return (
     <div className="option-container">
       <h2>Play Again?</h2>
       <div className="options">
-        <button className="option-btn" onClick={() => playAgain()}>
+        <button className="option-btn" onClick={() => playAgain("yes")}>
           Yes
         </button>
-        <button
-          className="option-btn"
-          onClick={() => changeActivePage("landing")}
-        >
+        <button className="option-btn" onClick={() => playAgain("no")}>
           No
         </button>
       </div>

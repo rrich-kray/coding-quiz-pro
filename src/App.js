@@ -40,7 +40,8 @@ const App = () => {
         />
       );
     }
-    if (activePage === "scores") return <Scores />;
+    if (activePage === "scores")
+      return <Scores changeActivePage={changeActivePage} />;
     if (activePage === "game-over")
       return (
         <Prompt

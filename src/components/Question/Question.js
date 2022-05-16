@@ -16,6 +16,10 @@ const Question = ({
     if (e.target.textContent === questions[currentQuestionIndex].answer) {
       changeCurrentScore(() => currentScore + 10);
       changeCurrentQuestionIndex(() => currentQuestionIndex + 1);
+      if (currentQuestionIndex === questions.length - 1 || seconds === 0) {
+        changeActivePage("game-over");
+        return;
+      }
       return;
     }
 
