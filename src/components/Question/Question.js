@@ -18,7 +18,12 @@ const Question = ({
 
   useEffect(() => {
     setInProp(true);
-  });
+
+    const interval = setInterval(() => {
+      setSeconds(() => seconds - 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [seconds, setSeconds]);
 
   const checkAnswer = (e) => {
     if (e.target.textContent === questions[currentQuestionIndex].answer) {
