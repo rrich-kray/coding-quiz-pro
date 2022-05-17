@@ -16,7 +16,7 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     background: white;
-    background: linear-gradient(to left, rgb(22, 130, 184) 50%, rgb(100, 100, 100) 50%) right;
+    background: linear-gradient(to left, white 50%, rgba(13, 141, 50, 0.25) 50%) right;
     background-size: 200%;
     transition: all 0.25s ease-out;
 }

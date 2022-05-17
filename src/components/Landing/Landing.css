@@ -12,33 +12,14 @@
     width: 200px;
     border-radius: 12px;
     margin: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    background: white;
-    background: linear-gradient(to left, white 50%, rgba(13, 141, 50, 0.25) 50%) right;
-    background-size: 200%;
-    transition: all 0.25s ease-out;
 }
 
-.start-btn:hover {
-    background-position: left;
-    color: white;
-}
 
 .view-scores-btn {
     padding: 5px;
     border-radius: 8px;
     padding: 10px;
     font-size: 10px;
-    cursor: pointer;
-    background: none;
-    background: linear-gradient(to left, white 50%, rgba(13, 141, 50, 0.25) 50%) right;
-    background-size: 200%;
-    transition: all 0.25s ease-out;
-}
-
-.view-scores-btn:hover {
-    background-position: left;
 }
 
 .example-enter {

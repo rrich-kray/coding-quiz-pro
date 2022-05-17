@@ -61,7 +61,11 @@ const Question = ({
           </h1>
           <div className="answers-container">
             {questions[currentQuestionIndex].options.map((option) => (
-              <button className="answer-btn" onClick={checkAnswer} key={option}>
+              <button
+                className="answer-btn btn"
+                onClick={checkAnswer}
+                key={option}
+              >
                 {option}
               </button>
             ))}
