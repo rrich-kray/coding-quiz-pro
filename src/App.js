@@ -4,12 +4,12 @@ import Landing from "./components/Landing/Landing";
 import Scores from "./components/Scores/Scores";
 import Prompt from "./components/Prompt/Prompt";
 import PlayAgain from "./components/PlayAgain/PlayAgain";
-import "./index.css";
 import galaxy from "./images/galaxy.jpg";
 import winter from "./images/winter.png";
 import jellyfish from "./images/jellyfish.jpg";
 import leaves from "./images/leaves.jpg";
 import leaves2 from "./images/leaves2.jpg";
+import "./index.css";
 
 const App = () => {
   const [seconds, setSeconds] = useState(60);

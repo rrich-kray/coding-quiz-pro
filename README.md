@@ -1,4 +1,4 @@
-# Shopify 2.0
+# Coding Quiz Pro
 
 This repository contains the source code for the Coding Quiz Pro.
 
