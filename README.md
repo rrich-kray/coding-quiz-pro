@@ -33,7 +33,7 @@ https://rrich-kray.github.io/coding-quiz-pro/
 
 ## How it Works
 
-As previously stated, Coding Quiz Pro was built entirely using the React framework. Components are conditinally rendered based on a "currenPage" global state that is changed whenever the user navigates to a different section of the application. This is accomplished using function closures in child components. React useState is used to maintain user scores, deplete remaining time and display questions.
+As previously stated, Coding Quiz Pro was built entirely using the React framework. Components are conditionally rendered based on a "currenPage" global state that is changed whenever the user navigates to a different section of the application. This is accomplished using function closures in child components. React useState is used to maintain user scores, deplete remaining time and display questions.
 
 ## License
 
