@@ -45,5 +45,5 @@ body {
     /* background-image: url("./images/galaxy.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size:cover;
 }

@@ -6,7 +6,10 @@ import Prompt from "./components/Prompt/Prompt";
 import PlayAgain from "./components/PlayAgain/PlayAgain";
 import "./index.css";
 import galaxy from "./images/galaxy.jpg";
-import canyon from "./images/canyon.jpg";
+import winter from "./images/winter.png";
+import jellyfish from "./images/jellyfish.jpg";
+import leaves from "./images/leaves.jpg";
+import leaves2 from "./images/leaves2.jpg";
 
 const App = () => {
   const [seconds, setSeconds] = useState(60);
@@ -15,7 +18,7 @@ const App = () => {
   const [activePage, changeActivePage] = useState("landing");
   const [gameOver, setGameOver] = useState(false);
 
-  const bgs = [galaxy, canyon];
+  const bgs = [galaxy, winter, jellyfish, leaves, leaves2];
   const [currentBgIndex, setBgIndex] = useState(0);
 
   const bgIndexWrapperFunc = () =>
