@@ -9,33 +9,36 @@
 
 .start-btn {
     height: 75px;
-    width: 150px;
+    width: 200px;
     border-radius: 12px;
-    background: none;
     margin: 20px;
     text-transform: uppercase;
-    transition: 0.25s;
+    cursor: pointer;
+    background: white;
+    background: linear-gradient(to left, white 50%, rgba(13, 141, 50, 0.25) 50%) right;
+    background-size: 200%;
+    transition: all 0.25s ease-out;
 }
 
 .start-btn:hover {
-    cursor: pointer;
-    color: #266784;
-    background: #2196f3;
-    box-shadow: 0 0 41px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    background-position: left;
+    color: white;
 }
 
 .view-scores-btn {
     padding: 5px;
     border-radius: 8px;
+    padding: 10px;
+    font-size: 10px;
+    cursor: pointer;
     background: none;
-    transition: 0.25s
+    background: linear-gradient(to left, white 50%, rgba(13, 141, 50, 0.25) 50%) right;
+    background-size: 200%;
+    transition: all 0.25s ease-out;
 }
 
 .view-scores-btn:hover {
-    cursor: pointer;
-    color: #266784;
-    background: #2196f3;
-    box-shadow: 0 0 41px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    background-position: left;
 }
 
 .example-enter {

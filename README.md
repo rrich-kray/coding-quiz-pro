@@ -1,36 +1,39 @@
-# Coding Quiz
+# Shopify 2.0
 
-This repository contains the HTML, CSS and Javascript source code for my Coding Quiz Pro Project.
+This repository contains the source code for the Coding Quiz Pro.
 
 ## Table of Contents
 
-[Description](#description)  
-[Installation](#installation)  
-[How It Works](#how-it-works)  
-[Utilizes](#utilizes)  
-[Deployed Application](#deployed-application)  
-[License](#license)
+[description](#description)  
+[installation](#installation)  
+[usage](#usage)  
+[credits](#credits/contact)  
+[contact](#contact)
+[license](#license)
 
 ## Description
 
-![Coding Quiz Screenshot](./assets/images/screen1.png)
+Coding Quiz Pro is an upgraded version of my first coding quiz project, found here:
 
-Coding Quiz Pro is a new and improved version of the Coding Quiz app (found here **link**).
+https://rrich-kray.github.io/coding-quiz/
+
+This is essentially a Coding quiz refactor using React, intended to further my competency with the framework. As such, it is entirely front-end based; all usernames and their associated scores are stored in local storage, similiar to its predecessor.
+
+In its current build, the application:
+
+- Presents users with a landing page consisting of "Start Game" and "View Scores" options.
+- Allows users to take a timed quiz
+- Allows users to view user scores
 
 ## Installation
 
-## How it works
+No installation required. Simply follow the link below to access the application.
 
-## Utilizes
+https://rrich-kray.github.io/coding-quiz-pro/
 
-- HTML
-- CSS
-- JavaScript
-- React
+## How it Works
 
-## Deployed Application
-
-The deployed application can be found using the link below.
+As previously stated, Coding Quiz Pro was built entirely using the React framework. Components are conditinally rendered based on a "currenPage" global state that is changed whenever the user navigates to a different section of the application. This is accomplished using function closures in child components. React useState is used to maintain user scores, deplete remaining time and display questions.
 
 ## License
 
