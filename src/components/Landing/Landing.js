@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./Landing.css";
 import { CSSTransition } from "react-transition-group";
 
-const Landing = ({ activePage, changeActivePage, startTimer }) => {
+const Landing = ({
+  changeActivePage,
+  currentBgIndex,
+  incrementBgIndex,
+  bgIndexWrapperFunc,
+}) => {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
     setInProp(true);
-  });
+  }, [setInProp]);
 
   return (
     <CSSTransition in={inProp} timeout={500} classNames="example" unmountOnExit>
@@ -18,12 +23,20 @@ const Landing = ({ activePage, changeActivePage, startTimer }) => {
         >
           Start!
         </button>
-        <button
-          className="view-scores-btn btn"
-          onClick={() => changeActivePage("scores")}
-        >
-          View high scores
-        </button>
+        <div className="secondary-btn-container">
+          <button
+            className="view-scores-btn btn"
+            onClick={() => changeActivePage("scores")}
+          >
+            View high scores
+          </button>
+          <button
+            className="change-bg-btn btn"
+            onClick={() => bgIndexWrapperFunc()}
+          >
+            Change Background!
+          </button>
+        </div>
       </div>
     </CSSTransition>
   );

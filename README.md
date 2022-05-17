@@ -25,6 +25,8 @@ In its current build, the application:
 - Allows users to take a timed quiz
 - Allows users to view user scores
 
+I find revisiting old projects a great way to test new skills while seeing first hand the progress I've made since my first attempt. Still, I think my current code structure leaves alot to be desired. For example, I think I could simplify things significantly by creating a single container component and passing in content as props. This would in all likelihood replace the Prompt, Question, PlayAgain and Infobar components altogether and eliminate a lot of repeated code. Given the simple nature of the data presented in all components of this app, I think that would be fairly straightforward to accomplish, but it will be a project for another day.
+
 ## Installation
 
 No installation required. Simply follow the link below to access the application.

@@ -12,13 +12,15 @@ body {
     width: 100vw;
 }
 
+
 .btn {
     text-transform: uppercase;
     cursor: pointer;
     background: white;
-    background: linear-gradient(to left, white 50%, rgba(13, 141, 50, 0.25) 50%) right;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.25) 50%, rgba(13, 141, 50, 0.25) 50%) right;
     background-size: 200%;
     transition: all 0.25s ease-out;
+    border-radius: 5px;
 }
 
 .btn:hover {
@@ -39,5 +41,9 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    /* background-image: url("./images/galaxy.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

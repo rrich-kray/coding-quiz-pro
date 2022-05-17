@@ -10,16 +10,24 @@
 .start-btn {
     height: 75px;
     width: 200px;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     margin: 20px;
 }
 
 
 .view-scores-btn {
     padding: 5px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     padding: 10px;
     font-size: 10px;
+}
+
+.change-bg-btn {
+    padding: 5px;
+    /* border-radius: 8px; */
+    padding: 10px;
+    font-size: 10px;
+    margin-left: 5px;
 }
 
 .example-enter {

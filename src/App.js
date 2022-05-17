@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Question from "./components/Question/Question";
 import Landing from "./components/Landing/Landing";
 import Scores from "./components/Scores/Scores";
 import Prompt from "./components/Prompt/Prompt";
 import PlayAgain from "./components/PlayAgain/PlayAgain";
 import "./index.css";
+import galaxy from "./images/galaxy.jpg";
+import canyon from "./images/canyon.jpg";
 
 const App = () => {
   const [seconds, setSeconds] = useState(60);
@@ -13,12 +15,23 @@ const App = () => {
   const [activePage, changeActivePage] = useState("landing");
   const [gameOver, setGameOver] = useState(false);
 
+  const bgs = [galaxy, canyon];
+  const [currentBgIndex, setBgIndex] = useState(0);
+
+  const bgIndexWrapperFunc = () =>
+    currentBgIndex === bgs.length - 1
+      ? setBgIndex(0)
+      : setBgIndex(() => currentBgIndex + 1);
+
   const renderActivePage = () => {
     if (activePage === "landing") {
       return (
         <Landing
           activePage={activePage}
           changeActivePage={changeActivePage}
+          currentBgIndex={currentBgIndex}
+          incrementBgIndex={setBgIndex}
+          bgIndexWrapperFunc={bgIndexWrapperFunc}
           key={"landing"}
         />
       );
@@ -63,7 +76,14 @@ const App = () => {
     }
   };
 
-  return <div className="main-cointainer">{renderActivePage()}</div>;
+  return (
+    <div
+      className="main-container"
+      style={{ backgroundImage: `url(${bgs[currentBgIndex]})` }}
+    >
+      {renderActivePage()}
+    </div>
+  );
 };
 
 export default App;
