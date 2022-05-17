@@ -17,7 +17,6 @@ const App = () => {
     if (activePage === "landing") {
       return (
         <Landing
-          startTimer={startTimer}
           activePage={activePage}
           changeActivePage={changeActivePage}
           key={"landing"}
@@ -38,7 +37,6 @@ const App = () => {
           gameOver={gameOver}
           setGameOver={setGameOver}
           key={"question"}
-          startTimer={startTimer}
         />
       );
     }
@@ -63,12 +61,6 @@ const App = () => {
         />
       );
     }
-  };
-
-  const startTimer = () => {
-    setInterval(() => {
-      setSeconds(() => seconds - 1);
-    }, 1000);
   };
 
   return <div className="main-cointainer">{renderActivePage()}</div>;

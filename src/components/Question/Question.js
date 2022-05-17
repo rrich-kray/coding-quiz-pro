@@ -12,7 +12,6 @@ const Question = ({
   seconds,
   setSeconds,
   changeActivePage,
-  startTimer,
 }) => {
   const [inProp, setInProp] = useState(false);
 
@@ -22,14 +21,15 @@ const Question = ({
     const interval = setInterval(() => {
       setSeconds(() => seconds - 1);
     }, 1000);
+    if (seconds === 0) changeActivePage("game-over");
     return () => clearInterval(interval);
-  }, [seconds, setSeconds]);
+  }, [seconds, setSeconds, changeActivePage]);
 
   const checkAnswer = (e) => {
     if (e.target.textContent === questions[currentQuestionIndex].answer) {
       changeCurrentScore(() => currentScore + 10);
       changeCurrentQuestionIndex(() => currentQuestionIndex + 1);
-      if (currentQuestionIndex === questions.length - 1 || seconds === 0) {
+      if (currentQuestionIndex === questions.length - 1) {
         changeActivePage("game-over");
         return;
       }
@@ -40,7 +40,7 @@ const Question = ({
     changeCurrentScore(() => currentScore - 10);
     setSeconds(() => seconds - 10);
 
-    if (currentQuestionIndex === questions.length - 1 || seconds === 0) {
+    if (currentQuestionIndex === questions.length - 1) {
       changeActivePage("game-over");
       return;
     }
