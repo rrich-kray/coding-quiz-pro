@@ -8,7 +8,7 @@ This repository contains the source code for the Coding Quiz Pro.
 [installation](#installation)  
 [usage](#usage)  
 [credits](#credits/contact)  
-[contact](#contact)
+[contact](#contact)  
 [license](#license)
 
 ## Description
