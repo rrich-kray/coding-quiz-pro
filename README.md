@@ -13,6 +13,8 @@ This repository contains the source code for the Coding Quiz Pro.
 
 ## Description
 
+[Main Screenshot](./src/screen1.png)
+
 Coding Quiz Pro is an upgraded version of my first coding quiz project, found here:
 
 https://rrich-kray.github.io/coding-quiz/
